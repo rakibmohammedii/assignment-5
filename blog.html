@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme= light>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .btn-color{
+          background-color: #B4F461;
+      }
+      .backdrop-filter{
+          backdrop-filter: blur(10px);
+      }
+  </style>
+</head>
+<body class="container mx-auto">
+  <nav class="navbar sticky backdrop-blur-md z-50 top-0 bg-slate-200 mb-5">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="./index.html" class="btn text-lg btn-color">Home</a>
+        <div class="flex items-center ">
+            <img src="./assets/logo.png" alt="">
+            <span class="font-bold">DONATE BANGLADESH</span>
+        </div>
+        <div class="flex items-center">
+            <img src="./assets/coin.png" alt="">
+            <span id="account-balance" class="font-bold">5500 BDT</span>
+        </div>
+    </div>
+
+</nav>
+    <h1 class="text-5xl font-extrabold">Important FAQ <i class="fa-solid fa-circle-question"></i></h1>
+    <div class="collapse collapse-arrow bg-base-200 mb-4">
+        <input type="radio" name="my-accordion-2" checked="checked" />
+        <div class="collapse-title text-xl font-medium">What is DOM?</div>
+        <div class="collapse-content">
+          <p>The Document Object Model (DOM) is the data representation of the objects that comprise the structure and content of a document on the web. This guide will introduce the DOM, look at how the DOM represents an HTML document in memory and how to use APIs to create web content and applications.</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200 mb-4">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">What is JS?</div>
+        <div class="collapse-content">
+          <p>JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else. (Okay, not everything, but it is amazing what you can achieve with a few lines of JavaScript code.)</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow bg-base-200 ,b-4
+      ">
+        <input type="radio" name="my-accordion-2" />
+        <div class="collapse-title text-xl font-medium">What is HTML?</div>
+        <div class="collapse-content">
+          <p>HTML stands for Hyper Text Markup Language. HTML is the standard markup language for creating Web pages. HTML describes the structure of a Web page. HTML consists of a series of elements. HTML elements tell the browser how to display the content.</p>
+        </div>
+      </div>
+</body>
+</html>
