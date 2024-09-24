@@ -15,6 +15,7 @@ document.getElementById('donate-noakhali').addEventListener('click', function(ev
         const noakhaliDonationTaka = parseFloat(noakhaliDonation);
         const updatedNoakhaliDonationTaka = noakhaliDonationTaka + donateNoakhaliTaka;
         document.getElementById('noakhali-donation').innerText = updatedNoakhaliDonationTaka;
+        document.getElementById('my_modal_1').showModal();
         
     }
     else {
@@ -43,6 +44,7 @@ document.getElementById('donate-feni').addEventListener('click', function(event)
         const feniDonationTaka = parseFloat(feniDonation);
         const updatedfeniDonationTaka = feniDonationTaka + donateFeniTaka;
         document.getElementById('feni-donation').innerText = updatedfeniDonationTaka;
+        document.getElementById('my_modal_1').showModal();
 
     }
     else {
@@ -74,10 +76,24 @@ document.getElementById('donate-quota').addEventListener('click', function(event
         const quotaDonationTaka = parseFloat(quotaDonation);
         const updatedQuotaDonationTaka = quotaDonationTaka + donateQuotaTaka;
         document.getElementById('quota-donation').innerText = updatedQuotaDonationTaka;
+        document.getElementById('my_modal_1').showModal();;
 
     }
     else {
         alert('Please enter a valid amount')
     }
 
+});
+
+
+
+
+// // toggling between buttons
+const historyTab = document.getElementById('history-tab');
+const donationTab = document.getElementById('donation-tab');
+historyTab.addEventListener('click', function(){
+    historyTab.classList.add('btn-color');
+    donationTab.classList.remove('btn-color');
+    document.getElementById('donation-form').classList.add('hidden');
+    document.getElementById('history-form').classList.remove('hidden');
 });
