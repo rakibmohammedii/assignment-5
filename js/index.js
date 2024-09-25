@@ -8,6 +8,11 @@ document.getElementById('donate-noakhali').addEventListener('click', function(ev
         // console.log(myBalance)
         const myBalanceTaka = parseFloat(myBalance);
         const donateNoakhaliTaka = parseFloat(donateNoakhali);
+        if(donateNoakhaliTaka > myBalanceTaka){
+            alert('You do not have enough money to donate');
+            return;
+        }
+
         const updatedMyBalance = myBalanceTaka - donateNoakhaliTaka;
         // console.log(updatedMyBalance);
         document.getElementById('account-balance').innerText = updatedMyBalance;
@@ -16,6 +21,15 @@ document.getElementById('donate-noakhali').addEventListener('click', function(ev
         const updatedNoakhaliDonationTaka = noakhaliDonationTaka + donateNoakhaliTaka;
         document.getElementById('noakhali-donation').innerText = updatedNoakhaliDonationTaka;
         document.getElementById('my_modal_1').showModal();
+        // add to history 
+        const historyItem = document.createElement('div');
+        historyItem.className = "bg-white m-2 p-3 rounded-lg border-2 border-indigo-500";
+        historyItem.innerHTML = `
+            <h2 class = "font-bold text-xl">${donateNoakhali}Taka Donated for Flood at Noakhali, BANGLADESH </h2>
+            <p class = "date">Date: ${new Date().toLocaleDateString()}</p>
+        `;
+        const historyContainer = document.getElementById('history-list');
+        historyContainer.insertBefore(historyItem, historyContainer.firstChild);
         
     }
     else {
@@ -37,6 +51,11 @@ document.getElementById('donate-feni').addEventListener('click', function(event)
         // console.log(myBalance)
         const myBalanceTaka = parseFloat(myBalance);
         const donateFeniTaka = parseFloat(donateFeni);
+        if(donateFeniTaka > myBalanceTaka){
+            alert('You do not have enough money to donate');
+            return;
+        }
+
         const updatedMyBalance = myBalanceTaka - donateFeniTaka;
         // console.log(updatedMyBalance);
         document.getElementById('account-balance').innerText = updatedMyBalance;
@@ -45,6 +64,15 @@ document.getElementById('donate-feni').addEventListener('click', function(event)
         const updatedfeniDonationTaka = feniDonationTaka + donateFeniTaka;
         document.getElementById('feni-donation').innerText = updatedfeniDonationTaka;
         document.getElementById('my_modal_1').showModal();
+         // add to history 
+         const historyItem = document.createElement('div');
+         historyItem.className = "bg-white m-2 p-3 rounded-lg border-2 border-indigo-500";
+         historyItem.innerHTML = `
+             <h2 class = "font-bold text-xl">${donateFeni}Taka Donated for Flood Relief in Feni, BANGLADESH </h2>
+             <p class = "date">Date:${new Date().toLocaleDateString()}</p>
+         `;
+         const historyContainer = document.getElementById('history-list');
+         historyContainer.insertBefore(historyItem, historyContainer.firstChild);
 
     }
     else {
@@ -69,15 +97,35 @@ document.getElementById('donate-quota').addEventListener('click', function(event
         // console.log(myBalance)
         const myBalanceTaka = parseFloat(myBalance);
         const donateQuotaTaka = parseFloat(donateQuota);
+        if(donateQuotaTaka > myBalanceTaka){
+            alert('You do not have enough money to donate');
+            return;
+        }
+        
+
         const updatedMyBalance = myBalanceTaka -  donateQuotaTaka;
         // console.log(updatedMyBalance);
         document.getElementById('account-balance').innerText = updatedMyBalance;
+    
         const quotaDonation = document.getElementById('quota-donation').innerText;
         const quotaDonationTaka = parseFloat(quotaDonation);
         const updatedQuotaDonationTaka = quotaDonationTaka + donateQuotaTaka;
         document.getElementById('quota-donation').innerText = updatedQuotaDonationTaka;
-        document.getElementById('my_modal_1').showModal();;
+        document.getElementById('my_modal_1').showModal();
 
+
+
+              // add to transaction history
+         // add to history 
+         const historyItem = document.createElement('div');
+         historyItem.className = "bg-white m-2 p-3 rounded-lg border-2 border-indigo-500";
+         historyItem.innerHTML = `
+             <h2 class = "font-bold text-xl">${donateQuota}Taka is Donated for Aid For injured in the Quota Movement, BANGLADESH </h2>
+             <p class = "date"> Date: ${new Date().toLocaleDateString()}</p>
+         `;
+         const historyContainer = document.getElementById('history-list');
+         historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+             
     }
     else {
         alert('Please enter a valid amount')
@@ -96,4 +144,13 @@ historyTab.addEventListener('click', function(){
     donationTab.classList.remove('btn-color');
     document.getElementById('donation-form').classList.add('hidden');
     document.getElementById('history-form').classList.remove('hidden');
+});
+
+
+
+donationTab.addEventListener('click', function(){
+    historyTab.classList.remove('btn-color');
+    donationTab.classList.add('btn-color');
+    document.getElementById('history-form').classList.add('hidden');
+    document.getElementById('donation-form').classList.remove('hidden');
 });

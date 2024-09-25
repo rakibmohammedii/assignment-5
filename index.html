@@ -11,13 +11,15 @@
         .btn-color{
             background-color: #B4F461;
         }
-        
+        .blur{
+            filter: blur(5px);
+        }
     </style>
 
 </head>
 <body class="container mx-auto">
     <!-- navbar starts -->
-    <nav class="navbar sticky backdrop-blur-xl z-50 top-0 bg-slate-200 mb-5">
+    <nav class="navbar sticky backdrop-blur-3xl z-50 top-0 bg-slate-200 mb-5">
         <div class="container mx-auto flex justify-between items-center">
             <a href="./blog.html" class="btn text-lg btn-color">Blog</a>
             <div class="flex items-center ">
@@ -33,7 +35,7 @@
     </nav>
      <!-- navbar ends -->
     <!-- buttons  starts-->
-    <div id="" class="flex justify-center my-3">
+    <div id="" class="flex gap-5 justify-center my-3">
         <button id="donation-tab" class="btn btn-color">Donation</button>
         <button id="history-tab" class="btn ">History</button>
     </div>
@@ -52,7 +54,7 @@
                 <h2 class="font-bold text-lg">Donate for Flood at Noakhali, BANGLADESH
                 </h2>
                 <p class="text-slate-500 py-5"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-                <input id="input-noakhali" type="text" placeholder="Write Donation Amount " class="p-3 input input-bordered w-full my-2"><br>
+                <input id="input-noakhali" type="number" placeholder="Write Donation Amount " class="p-3 input input-bordered w-full my-2"><br>
                 <a id="donate-noakhali" class="btn btn-color w-full font-bold text-lg my-5 no-scroll">Donate Now</a>
                 
             </div>
@@ -70,7 +72,7 @@
                 </h2>
                 <p class="text-slate-500 py-5"> Donate for Flood Relief in Feni,Bangladesh
                     The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
-                <input id="input-feni" type="text" placeholder="Write Donation Amount " class="p-3 input input-bordered w-full my-2"><br>
+                <input id="input-feni" type="number" placeholder="Write Donation Amount " class="p-3 input input-bordered w-full my-2"><br>
                 <a id="donate-feni" class="btn btn-color w-full font-bold text-lg my-5 no-scroll"  onclick="">Donate Now</a>
                 
             </div>
@@ -88,7 +90,7 @@
                 <h2 class="font-bold text-lg">Aid for Injured in the Quota Movement</h2>
                 <p class="text-slate-500 py-5"> 
                     The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
-                <input id="input-quota" type="text" placeholder="Write Donation Amount " class="p-3 input input-bordered w-full my-2"><br>
+                <input id="input-quota" type="number" placeholder="Write Donation Amount " class="p-3 input input-bordered w-full my-2"><br>
                 <a id="donate-quota" class="btn btn-color w-full font-bold text-lg my-5 no-scroll" >Donate Now </a>
                  
             </div>
@@ -101,7 +103,15 @@
 
     <!-- history part starts -->
     <div id="history-form" class="hidden">
-        <h4 class="text-4xl font-bold">hello History</h4>
+        <h3
+            class="text-lg font-semibold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+          >Your total Donation History</h3>
+        <div id="history-list" class="space-y-3">
+
+            
+        </div>
+
+        
     </div>
      <!-- history part ends  -->
 
